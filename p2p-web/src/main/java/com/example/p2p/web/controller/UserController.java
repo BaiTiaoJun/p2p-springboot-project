@@ -328,7 +328,7 @@ public class UserController {
         //        session.removeAttribute(ConstantsUtil.SESSION_USER);
 
         session.invalidate();
-        return "redirect:/index";
+        return "redirect:/";
     }
 
     @RequestMapping("/user/toLoginPage.do")

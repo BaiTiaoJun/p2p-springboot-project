@@ -103,7 +103,9 @@ $(function () {
 
 	//点击图片刷新验证码信息
 	$("#imgCode").click(function () {
-		loadVerCodeImg();
+		if ($("div[id$='Err']").text() === "") {
+			loadVerCodeImg();
+		}
 	})
 
 	$(document).keydown(function(event){
@@ -139,7 +141,7 @@ function login(phone, loginPassword, captcha) {
 			type: "post",
 			success: function (data) {
 				if (data.code === 1) {
-					window.location.href = "/p2p/index";
+					window.location.href = "/p2p/";
 				} else {
 					//验证码输入错误，弹出错误信息后重新刷新图片验证码，清空之前的内容，添加焦点
 					if (data.message === '验证码错误，请重新输入') {

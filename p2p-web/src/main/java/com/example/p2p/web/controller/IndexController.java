@@ -26,7 +26,7 @@ public class IndexController {
     @DubboReference(interfaceClass = BidInfoService.class, version = "1.0.0", check = false, timeout = 15000)
     private BidInfoService bidInfoService;
 
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public String index(Model model) {
 //        查询历史平均年化收益率
         Double historyAvgRate = loanInfoService.queryHistoryAvgRate();

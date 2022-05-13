@@ -82,7 +82,7 @@ $(function () {
 				if (data.code === 1) {
 					showSuccess("phone");
 				} else {
-					showError("phone", data.message);
+					showError("phone", "手机号码已存在");
 				}
 			}
 		})
@@ -127,7 +127,7 @@ $(function () {
 		pass.blur();
 
 		//如果输入框没有错误则可以点击获取验证码按钮
-		if ($("#loginPasswordErr").text() === "" && $("#phoneErr").text() === "") {
+		if ($("#loginPasswordErr").text() === "" || $("#phoneErr").text() === "") {
 			//点击成功后，隐藏弹出的提示框
 			hideError("messageCode");
 
