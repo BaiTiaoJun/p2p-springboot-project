@@ -1,0 +1,10 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /
+
+dubbo:
+  application:
+    name: p2p-timer
+  registry:
+    address: zookeeper://127.0.0.1:2181

@@ -1,0 +1,38 @@
+#    提供者的端口和上下文根
+server:
+  port: 8081
+  servlet:
+    context-path: /
+
+#    使用druid连接池配置数据库的数据源
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/p2p?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: root
+      password: zhangshun
+
+#    配置redis的地址和端口
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+#    配置dubbo的名称和注册中心地址
+dubbo:
+  application:
+    name: p2p-dataService
+  registry:
+    address: zookeeper://127.0.0.1:2181
+
+#    配置mybatis的映射文件路径和实体对象的别名
+mybatis:
+  mapper-locations: classpath:mapper/loan/*.xml, classpath:mapper/user/*.xml
+  type-aliases-package: com.example.p2p.model
+
+#  返回sql执行的打印日志
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
